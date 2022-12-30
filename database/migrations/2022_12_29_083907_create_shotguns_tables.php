@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('shotguns', function (Blueprint $table) {
             $table->bigIncrements('id')->nullable(false);
             $table->foreignId('wepon_id')->nullable(false);
-            $table->string('name',50)->nullable(false);
+            $table->string('name',150)->nullable(false);
         });
     }
 
