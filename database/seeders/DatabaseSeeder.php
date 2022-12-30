@@ -23,7 +23,8 @@ class DatabaseSeeder extends Seeder
             Marksman_RiflesTableSeeder::class,
             PistolsTableSeeder::class,
             Sub_machineGunsTableSeeder::class,
-            ShotgunsTableSeeder::class
+            ShotgunsTableSeeder::class,
+            TagsTableSeeder::class,
         ]);
     }
 }
