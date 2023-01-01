@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('assault_carbins', function (Blueprint $table) {
+        Schema::create('assault_carbines', function (Blueprint $table) {
             $table->bigIncrements('id')->nullable(false);
             $table->foreignId('wepon_id')->nullable(false);
             $table->string('name',150)->nullable(false);
@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('assault_carbins');
+        Schema::dropIfExists('assault_carbines');
     }
 };

@@ -15,7 +15,7 @@ class AssaultcarbinesTableSeeder extends Seeder
      */
     public function run()
     {
-        \DB::table('assault_carbins')->insert([
+        \DB::table('assault_carbines')->insert([
             [
                 'id' => '1',
                 'wepon_id' => '1',
