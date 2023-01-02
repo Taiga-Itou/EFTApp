@@ -2,8 +2,8 @@
     <x-slot name="header">
         top
     </x-slot>
-    <style>
-    ul{list-style-type: none;}
+<style>
+ul{list-style-type: none;}
 
 .wepons ul{
 position: relative;
@@ -45,7 +45,6 @@ height: auto;
 background-color: #fff;
 }
 </style>
-    @csrf
     <h1>Wepons</h1>
     <ul class='wepons'>
         <ul>
@@ -54,7 +53,7 @@ background-color: #fff;
             <li>{{ $assault_carbine->wepon->name}}
                 <ul>
             @endif
-                    <li>    {{$assault_carbine->name}}</li>
+                    <li>{{$assault_carbine->name}}</li>
             @endforeach
                 </ul>
             </li>
@@ -63,7 +62,7 @@ background-color: #fff;
             <li>{{ $assault_rifle->wepon->name}}
                 <ul>
             @endif
-                    <li>    {{$assault_rifle->name}}</li>
+                    <li>{{$assault_rifle->name}}</li>
             @endforeach
                 </ul>
             </li>
@@ -72,7 +71,7 @@ background-color: #fff;
             <li>{{ $bolt_action_rifle->wepon->name}}
                 <ul>
                 @endif
-                    <li>    {{$bolt_action_rifle->name}}</li>
+                    <li>{{$bolt_action_rifle->name}}</li>
             @endforeach
                 </ul>
             </li>
@@ -81,7 +80,7 @@ background-color: #fff;
             <li>{{ $machinegun->wepon->name}}
                 <ul>
             @endif
-                    <li>    {{$machinegun->name}}</li>
+                    <li>{{$machinegun->name}}</li>
             @endforeach
                 </ul>
             </li>
@@ -90,7 +89,7 @@ background-color: #fff;
             <li>{{ $marksman_rifle->wepon->name}}
                 <ul>
             @endif
-                    <li>    {{$marksman_rifle->name}}</li>
+                    <li>{{$marksman_rifle->name}}</li>
             @endforeach
                 </ul>
             </li>
@@ -99,7 +98,7 @@ background-color: #fff;
             <li>{{ $pistol->wepon->name}}
                 <ul>
             @endif
-                    <li>    {{$pistol->name}}</li>
+                    <li>{{$pistol->name}}</li>
             @endforeach
                 </ul>
             </li>
@@ -108,7 +107,7 @@ background-color: #fff;
             <li>{{ $shotgun->wepon->name}}
                 <ul>
             @endif
-                    <li>    {{$shotgun->name}}</li>
+                    <li>{{$shotgun->name}}</li>
             @endforeach
                 </ul>
             </li>
@@ -117,9 +116,10 @@ background-color: #fff;
             <li>{{ $sub_machinegun->wepon->name}}
                 <ul>
             @endif
-                    <li>    {{$sub_machinegun->name}}</li>
+                    <li>{{$sub_machinegun->name}}</li>
             @endforeach
                 </ul>
             </li>
+        </ul>
         </ul>
 </x-app-layout>

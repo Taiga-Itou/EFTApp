@@ -12,6 +12,7 @@ use App\Models\Marksman_rifle;
 use App\Models\Pistol;
 use App\Models\Shotgun;
 use App\Models\Sub_machinegun;
+use App\Models\Gun;
 
 class Wepon extends Model
 {
@@ -48,5 +49,14 @@ class Wepon extends Model
     public function Sub_machineguns()
     {
         return $this->hasMany(Sub_machinegun::class);
+    }
+    public function Gun()
+    {
+        return $this->hasMany(Gun::class);    
+    }
+    
+    public function getByWepon()
+    {
+        return $this->guns()->with('wepon');
     }
 }

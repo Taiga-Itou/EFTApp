@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Wepon;
 
-class Sub_machinegun extends Model
+class Gun extends Model
 {
     use HasFactory;
     
