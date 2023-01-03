@@ -4,23 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Wepon;
-use App\Models\Assault_carbine;
-use App\Models\Assault_rifle;
-use App\Models\Bolt_action_rifle;
-use App\Models\Machinegun;
-use App\Models\Marksman_rifle;
-use App\Models\Pistol;
-use App\Models\Shotgun;
-use App\Models\Sub_machinegun;
 use App\Models\Gun;
-use App\Models\posts;
+use App\Models\Post;
 
 class PostController extends Controller
 {
-    public function top
-    (
-        Gun $gun
-    )
+    public function top(Gun $gun)
     {
         return view('posts/top')->with([
                                         'assault_carbines'=> $gun-> Where('wepon_id','1')->get() ,
@@ -36,6 +25,6 @@ class PostController extends Controller
     
     public function weponTop(Post $post)
     {
-        return view('posts/weponTop')->with(['post'=> $post-> get()]);
+        return view('posts/weponTop')->with(['posts'=> $post=Post::with(['gun.wepon'])-> get()]);
     }
 }

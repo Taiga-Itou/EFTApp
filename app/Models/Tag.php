@@ -4,17 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Gun;
+use App\Models\Post;
 
-class Wepon extends Model
+class Tag extends Model
 {
     use HasFactory;
     
-    
-    public function Gun()
+    public function post()
     {
-        return $this->hasMany(Gun::class);    
+        return $this->hasMany(post::class);
     }
-    
-    
 }

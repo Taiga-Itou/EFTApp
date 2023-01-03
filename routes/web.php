@@ -16,11 +16,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/top', [PostController::class, 'top'])->name('top');
-Route::get('/posts', [PostController::class, 'weponTop']);
+Route::get('/posts', [PostController::class, 'weponTop'])->name('weponTop');
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 Route::get('/dashboard', function () {
     return view('dashboard');
