@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('posts', function (Blueprint $table) {
             $table->bigIncrements('id')->nullable(false);
             $table->foreignId('user_id')->nullable(false);
-            $table->foreignId('wepon_id')->nullable(false);
+            $table->foreignId('gun_id')->nullable(false);
             $table->foreignId('tag_id')->nullable(false);
             $table->string('image',50)->nullable(false);
             $table->string('title',50)->nullable(false);
