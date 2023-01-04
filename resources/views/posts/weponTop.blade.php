@@ -6,8 +6,8 @@
     <div class='posts'>
         @foreach($posts as $post)
         <div class='post'>
-            <h2 class='title'>{{ $post->title }}</h2>
-            <p1 class='wepon'>{{ $post->gun->wepon->name }}:{{ $post->gun->name }}</p1>
+            <a href="/posts/{{ $post->id }}" class='title'>{{ $post->title }}</a>
+            <p1 class='wepon'>{{ $post->gun->wepon->name }}::{{ $post->gun->name }}</p1>
             <p2 class='tag'>{{ $post->tag->name }}</p2>
             <p3 class='image'>{{ $post->image}}</p3>
             <p4 class='good_num'>{{ $post->good_num }}</p4>

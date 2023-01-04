@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Gun;
+use App\Models\Post;
 
 class Wepon extends Model
 {
@@ -16,5 +17,9 @@ class Wepon extends Model
         return $this->hasMany(Gun::class);    
     }
     
+    public function posts()
+    {
+        return $this->hasMany(posts::class);
+    }
     
 }

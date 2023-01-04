@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\Models\Gun;
 use App\Models\Tag;
 use App\Models\User;
+use App\Models\Wepon;
 
 class Post extends Model
 {
@@ -31,5 +32,10 @@ class Post extends Model
     public function getPaginateByLimit(int $limit_count = 10)
     {
         return $this->orderBy('update_at','DESC')->paginate($limit_count);
+    }
+    
+    public function wepon()
+    {
+        return $this->belongsTo(wepon::class);
     }
 }
