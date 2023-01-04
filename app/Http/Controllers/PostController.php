@@ -25,6 +25,6 @@ class PostController extends Controller
     
     public function weponTop(Post $post)
     {
-        return view('posts/weponTop')->with(['posts'=> $post=Post::with(['gun.wepon'])-> get()]);
+        return view('posts/weponTop')->with(['posts'=> $post=Post::with(['gun.wepon'])->simplePaginate(15)]);
     }
 }

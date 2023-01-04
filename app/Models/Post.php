@@ -26,4 +26,10 @@ class Post extends Model
     {
         return $this->belongsTo(user::class);
     }
+    
+    
+    public function getPaginateByLimit(int $limit_count = 10)
+    {
+        return $this->orderBy('update_at','DESC')->paginate($limit_count);
+    }
 }
