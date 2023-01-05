@@ -27,4 +27,9 @@ class PostController extends Controller
     {
         return view('posts/weponTop')->with(['posts'=> $post=Post::with(['gun.wepon'])->simplePaginate(15)]);
     }
+    
+    public function create(Post $post)
+    {
+        return view('posts/create')->with(['posts']);
+    }
 }
