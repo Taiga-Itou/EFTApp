@@ -38,4 +38,13 @@ class Post extends Model
     {
         return $this->belongsTo(wepon::class);
     }
+    
+    protected $fillable =[
+        'title',
+        'body',
+        'user_id',
+        'gun_id',
+        'image',
+        'tag_id',
+    ];
 }
