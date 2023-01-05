@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Wepon;
 use App\Models\Gun;
 use App\Models\Post;
+use App\Models\Tag;
 
 class PostController extends Controller
 {
@@ -33,8 +34,18 @@ class PostController extends Controller
         return view('posts/wepon')->with(['posts'=> $post]);
     }
     
-    public function create(Post $post)
+    public function create(Gun $gun,Tag $tag)
     {
-        return view('posts/create')->with(['posts']);
+        return view('posts/create')->with([
+                                            'guns'=> $gun->get(),
+                                            'tags'=> $tag->get()
+                                            ]);
+    }
+    
+    public function store(Request $request, Post $post)
+    {
+        $input =$request['post'];
+        $post->fill($input)->save();
+        return redirect('/posts/' . $post->id);
     }
 }
