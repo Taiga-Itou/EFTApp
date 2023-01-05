@@ -32,4 +32,9 @@ class PostController extends Controller
     {
         return view('posts/wepon')->with(['posts'=> $post]);
     }
+    
+    public function create()
+    {
+        return view('posts/create');
+    }
 }
