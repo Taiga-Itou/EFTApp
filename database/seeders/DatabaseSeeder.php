@@ -16,15 +16,6 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
             WeponTableSeeder::class,
-            AssaultcarbinesTableSeeder::class,
-            AssaultRiflesTableSeeder::class,
-            Bolt_actionRiflesTableSeeder::class,
-            MachineGunsTableSeeder::class,
-            Marksman_RiflesTableSeeder::class,
-            PistolsTableSeeder::class,
-            Sub_machineGunsTableSeeder::class,
-            ShotgunsTableSeeder::class,
-            TagsTableSeeder::class,
         ]);
     }
 }
