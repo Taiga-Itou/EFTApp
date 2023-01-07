@@ -3,7 +3,7 @@
         Create
     </x-slot>
     <h1> Create </h1>
-    <form action="/posts" method="POST">
+    <form action="/posts" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="title">
             <h2>Title</h2>
@@ -23,7 +23,8 @@
             </select>
         </div>
         <div class="image">
-            <input type="file" name="post[image]" />
+            <input type="file" name="image" class="form-control"/>
+        </div>
         <div class="tag">
             <h2>Tags</h2>
             <select name="post[tag_id]">
@@ -33,8 +34,6 @@
                 @endforeach
             </select>
         </div>
-        <button>
-            <input type="submit" value="store"/>
-        </button>
+            <input type="submit" value="作成"/>
     </form>
 </x-app-layout>        

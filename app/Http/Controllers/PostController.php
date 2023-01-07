@@ -7,6 +7,8 @@ use App\Models\Wepon;
 use App\Models\Gun;
 use App\Models\Post;
 use App\Models\Tag;
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
@@ -45,6 +47,13 @@ class PostController extends Controller
     public function store(Request $request, Post $post)
     {
         $input =$request['post'];
+        $img = $request->file('image');
+        $extension = $img->getClientOriginalExtension();
+        $file_token = Str::random(32);
+        $filename = $file_token . '.' . $extension;
+        $input['image'] = $filename;
+        $img ->storeAs('public/images',$filename);
+        $input['user_id'] = Auth::user()->id;
         $post->fill($input)->save();
         return redirect('/posts/' . $post->id);
     }

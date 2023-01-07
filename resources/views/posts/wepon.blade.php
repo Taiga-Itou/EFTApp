@@ -2,7 +2,7 @@
     <x-slot>
     </x-slot>
     <h1 class="title">{{ $posts->title }}</h1>
-    <div class="image">{{ $posts->image }}</div>
+    <img src="{{ asset('storage/images/'.$posts->image) }}" class="image">
     <div class="wepon">{{ $posts->gun->wepon->name }}::{{ $posts->gun->name }}</div>
     <div class="tag"> {{ $posts->tag->name}} </div>
     <div class="body">{{ $posts->body }}</div>

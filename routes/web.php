@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\UploadController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,7 +21,6 @@ Route::get('/posts/create', [PostController::class, 'create'])->name('create');
 Route::get('/posts', [PostController::class, 'weponTop'])->name('weponTop');
 Route::get('/posts/{post}', [PostController::class, 'wepon']);
 Route::post('/posts', [PostController::class, 'store']);
-
 
 Route::get('/dashboard', function () {
     return view('dashboard');
