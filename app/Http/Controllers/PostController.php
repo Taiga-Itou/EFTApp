@@ -9,6 +9,7 @@ use App\Models\Post;
 use App\Models\Tag;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Requests\PostRequest;
 
 class PostController extends Controller
 {
@@ -44,7 +45,7 @@ class PostController extends Controller
                                             ]);
     }
     
-    public function store(Request $request, Post $post)
+    public function store(PostRequest $request, Post $post)
     {
         $input =$request['post'];
         $img = $request->file('image');
@@ -56,5 +57,24 @@ class PostController extends Controller
         $input['user_id'] = Auth::user()->id;
         $post->fill($input)->save();
         return redirect('/posts/' . $post->id);
+    }
+    
+    public function edit(Post $post,Gun $gun,Tag $tag)
+    {
+        return view('posts/edit')->with([
+                                        'posts'=> $post,
+                                        'guns'=> $gun->get(),
+                                        'tags'=> $tag->get()
+                                        ]);
+    }
+    
+    public function update(PostRequest $request, Post $post)
+    {
+        $input_post = $request['post'];
+        $img = $request->file('image');
+        $img ->storeAs('public/images',$post->image);
+        $post->fill($input_post)->save();
+        
+        return redirect('/posts/'. $post->id);
     }
 }

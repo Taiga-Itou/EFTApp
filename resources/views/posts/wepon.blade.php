@@ -11,6 +11,9 @@
     <div class="footer">
         <a href="/posts">戻る</a>
     </div>
+    <div class="edit">
+        <a href="/posts/{{ $posts->id }}/edit">Edit</a>
+    </div>
 </x-app-layout>
     
         
