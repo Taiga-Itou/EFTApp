@@ -158,9 +158,28 @@ return [
     */
 
     'custom' => [
-        'attribute-name' => [
-            'rule-name' => 'custom-message',
+        'post.title' => [
+            'required' => 'This is empty.',
+            'max' => 'This is limit 100 characters'
         ],
+        'post.body' => [
+            'required' => 'This is empty.',
+            'max' => 'This is limit 4000 characters'
+        ],
+        'post.gun_id' => [
+            'required' => 'This is empty.',
+        ],
+        'post.tag_id' => [
+            'required' => 'This is empty.',
+        ],
+        'post.tag_id' => [
+            'required' => 'This is empty.',
+        ],
+        'image' => [
+            'required' => 'This is empty.',
+            'image' => 'This is only Screenshot',
+        ],
+        
     ],
 
     /*
