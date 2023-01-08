@@ -14,6 +14,24 @@
     <div class="edit">
         <a href="/posts/{{ $posts->id }}/edit">Edit</a>
     </div>
+    <div class="delete">
+        <form action="/posts/{{ $posts->id }}" id="form_{{$posts->id }}" method="POST">
+            @csrf
+            @method('DELETE')
+            <button type="button" onclick="deletePost({{ $posts->id }})">削除</button>
+        </form>
+    </div>
+    <script>
+        function deletePost(id)
+        {
+            'use strict'
+            
+            if(confirm('削除すると復元できません。\n本当に削除しますか？'))
+            {
+                document.getElementById(`form_${id}`).submit();
+            }
+        }
+    </script>
 </x-app-layout>
     
         
