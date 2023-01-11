@@ -6,6 +6,7 @@ use App\Http\Requests\ProfileUpdateRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
+use App\Models\Post;
 
 class ProfileController extends Controller
 {
@@ -63,5 +64,14 @@ class ProfileController extends Controller
         $request->session()->regenerateToken();
 
         return Redirect::to('/');
+    }
+    
+    public function mypage(Post $post)
+    {
+        $user=Auth::user()->id;
+        return view('profile/mypage')->with([ 
+            'myposts'=>$post->where('user_id',$user)->get() 
+            ]);
+
     }
 }
