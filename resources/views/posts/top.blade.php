@@ -50,7 +50,8 @@ background-color: #fff;
         <ul>
             @foreach($assault_carbines as $assault_carbine)
             @if($loop->first)
-            <li>{{ $assault_carbine->wepon->name}}
+            <li>
+                <a href="/wepons/{{ $assault_carbine->wepon_id }}">{{ $assault_carbine->wepon->name}}</a>
                 <ul>
             @endif
                     <li>{{$assault_carbine->name}}</li>
@@ -59,7 +60,8 @@ background-color: #fff;
             </li>
             @foreach($assault_rifles as $assault_rifle)
             @if($loop->first)
-            <li>{{ $assault_rifle->wepon->name}}
+            <li>
+                <a href="/wepons/{{ $assault_rifle->wepon_id }}">{{ $assault_rifle->wepon->name}}</a>
                 <ul>
             @endif
                     <li>{{$assault_rifle->name}}</li>
@@ -68,7 +70,8 @@ background-color: #fff;
             </li>
             @foreach($bolt_action_rifles as $bolt_action_rifle)
             @if($loop->first)
-            <li>{{ $bolt_action_rifle->wepon->name}}
+            <li>
+                <a href="/wepons/{{ $bolt_action_rifle->wepon_id }}">{{ $bolt_action_rifle->wepon->name}}</a>
                 <ul>
                 @endif
                     <li>{{$bolt_action_rifle->name}}</li>
@@ -77,7 +80,8 @@ background-color: #fff;
             </li>
             @foreach($machineguns as $machinegun)
             @if($loop->first)
-            <li>{{ $machinegun->wepon->name}}
+            <li>
+                <a href="/wepons/{{ $machinegun->wepon_id }}">{{ $machinegun->wepon->name}}</a>
                 <ul>
             @endif
                     <li>{{$machinegun->name}}</li>
@@ -86,7 +90,8 @@ background-color: #fff;
             </li>
             @foreach($marksman_rifles as $marksman_rifle)
             @if($loop->first)
-            <li>{{ $marksman_rifle->wepon->name}}
+            <li>
+                <a href="/wepons/{{ $marksman_rifle->wepon_id }}">{{ $marksman_rifle->wepon->name}}</a>
                 <ul>
             @endif
                     <li>{{$marksman_rifle->name}}</li>
@@ -95,7 +100,8 @@ background-color: #fff;
             </li>
             @foreach($pistols as $pistol)
             @if($loop->first)
-            <li>{{ $pistol->wepon->name}}
+            <li>
+                <a href="/wepons/{{ $pistol->wepon_id }}">{{ $pistol->wepon->name}}</a>
                 <ul>
             @endif
                     <li>{{$pistol->name}}</li>
@@ -104,7 +110,8 @@ background-color: #fff;
             </li>
             @foreach($shotguns as $shotgun)
             @if($loop->first)
-            <li>{{ $shotgun->wepon->name}}
+            <li>
+                <a href="/wepons/{{ $shotgun->wepon_id }}">{{ $shotgun->wepon->name}}</a>
                 <ul>
             @endif
                     <li>{{$shotgun->name}}</li>
@@ -113,7 +120,8 @@ background-color: #fff;
             </li>
             @foreach($sub_machineguns as $sub_machinegun)
             @if($loop->first)
-            <li>{{ $sub_machinegun->wepon->name}}
+            <li>
+                <a href="/wepons/{{ $sub_machinegun->wepon_id }}">{{ $sub_machinegun->wepon->name}}</a>
                 <ul>
             @endif
                     <li>{{$sub_machinegun->name}}</li>

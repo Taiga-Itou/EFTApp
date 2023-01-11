@@ -24,6 +24,8 @@ Route::get('/posts/{post}', [PostController::class, 'wepon']);
 Route::post('/posts', [PostController::class, 'store']);
 Route::get('/posts/{post}/edit', [PostController::class, 'edit']);
 Route::put('/posts/{post}', [PostController::class, 'update']);
+Route::get('/mypage', [ProfileController::class, 'mypage'])->name('mypage');
+Route::get('/wepons/{wepon}', [PostController::class, 'category']);
 
 
 Route::get('/dashboard', function () {

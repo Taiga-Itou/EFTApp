@@ -83,4 +83,15 @@ class PostController extends Controller
         $post->delete();
         return redirect('/posts');
     }
+    
+    public function category(Post $post, Gun $gun, Wepon $wepon)
+    {
+        $wepon_id = $wepon->id;
+        #dd($wepon_id);
+        $category = $gun->where('wepon_id',$wepon_id)->get();
+        #dd($category);
+        $gun_id = $category->gun->id->get();
+        dd($gun_id);
+        return view('posts/category')->with(['posts'=> $post-> where('gun_id',$category)->get() ]);
+    }
 }
