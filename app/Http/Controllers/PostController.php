@@ -10,6 +10,7 @@ use App\Models\Tag;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\PostRequest;
+use Cloudinary;
 
 class PostController extends Controller
 {
@@ -29,7 +30,7 @@ class PostController extends Controller
     
     public function weponTop(Post $post)
     {
-        return view('posts/weponTop')->with(['posts'=> $post ->simplePaginate(15)]);
+        return view('posts/weponTop')->with(['posts'=> $post ->get()]);
     }
     
     public function wepon(Post $post)
@@ -48,12 +49,8 @@ class PostController extends Controller
     public function store(PostRequest $request, Post $post)
     {
         $input =$request['post'];
-        $img = $request->file('image');
-        $extension = $img->getClientOriginalExtension();
-        $file_token = Str::random(32);
-        $filename = $file_token . '.' . $extension;
-        $input['image'] = $filename;
-        $img ->storeAs('public/images',$filename);
+        $img_url= Cloudinary::upload($request->file('image')->getRealPath())->getSecurePath();
+        $input['image']= $img_url;
         $input['user_id'] = Auth::user()->id;
         $post->fill($input)->save();
         return redirect('/posts/' . $post->id);
@@ -71,8 +68,9 @@ class PostController extends Controller
     public function update(PostRequest $request, Post $post)
     {
         $input_post = $request['post'];
-        $img = $request->file('image');
-        $img ->storeAs('public/images',$post->image);
+        $image = $post->image;
+        $img = Cloudinary::upload($request->file('image')->getRealPath())->getSecurePath();
+        $input_post['image']=$img;
         $post->fill($input_post)->save();
         
         return redirect('/posts/'. $post->id);
@@ -88,10 +86,20 @@ class PostController extends Controller
     {
         $wepon_id = $wepon->id;
         #dd($wepon_id);
-        $category = $gun->where('wepon_id',$wepon_id)->get();
-        #dd($category);
-        $gun_id = $category->gun->id->get();
-        dd($gun_id);
-        return view('posts/category')->with(['posts'=> $post-> where('gun_id',$category)->get() ]);
+        $categories = $gun->where('wepon_id',$wepon_id)->get();
+        $wepon = [];
+        foreach($categories as $category)
+        {
+        $wepon[] = $category->id;
+        }
+        $wepon2 = new Wepon();
+        #dd($wepon);
+        #dd($post-> whereIn('gun_id',$wepon)->get());
+        #dd($wepon2->where('id',$wepon_id)->get());
+        return view('posts/category')->with([
+            'posts'=> $post-> whereIn('gun_id',$wepon)->get(),
+            'wepons' => $wepon2->where('id',$wepon_id)->get()
+        ]);
+    
     }
 }

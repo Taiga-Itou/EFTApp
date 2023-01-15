@@ -14,8 +14,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call([
-            WeponTableSeeder::class,
-        ]);
+        $this->call(
+            GunTableSeeder::class
+        );
     }
 }

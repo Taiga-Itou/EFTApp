@@ -6,7 +6,7 @@
             @foreach($myposts as $mypost)
             <div class="post">
                 <a href="/posts/{{ $mypost->id }}" class='title'>{{ $mypost->title }}</a>
-                <img src="{{ asset('storage/images/'.$mypost->image) }}" class="image">
+                <img src="{{ $mypost->image }}" class="image">
                 <div class="body">{{ $mypost->body }}</div>
                 <div class="wepon">{{ $mypost->gun->wepon->name }}::{{ $mypost->gun->name }}</div>
                 <div class="tag"> {{ $mypost->tag->name}} </div>
