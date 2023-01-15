@@ -18,9 +18,9 @@ return new class extends Migration
             $table->foreignId('user_id')->nullable(false);
             $table->foreignId('gun_id')->nullable(false);
             $table->foreignId('tag_id')->nullable(false);
-            $table->string('image',50)->nullable(false);
+            $table->string('image')->nullable(false);
             $table->string('title',50)->nullable(false);
-            $table->string('body',150)->nullable(false);
+            $table->string('body')->nullable(false);
             $table->bigInteger('good_num')->nullable(false)->default(0);
             $table->timestamp('updated_at')->useCurrent()->nullable(false);
             $table->timestamp('created_at')->useCurrent()->nullable(false);
