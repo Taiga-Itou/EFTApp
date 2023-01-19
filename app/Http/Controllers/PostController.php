@@ -7,6 +7,7 @@ use App\Models\Wepon;
 use App\Models\Gun;
 use App\Models\Post;
 use App\Models\Tag;
+use App\Models\Comment;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\PostRequest;
@@ -33,9 +34,13 @@ class PostController extends Controller
         return view('posts/weponTop')->with(['posts'=> $post ->get()]);
     }
     
-    public function wepon(Post $post)
+    public function wepon(Post $post,Comment $comment)
     {
-        return view('posts/wepon')->with(['posts'=> $post]);
+        $post_id =$post->id;
+        #dd($post_id);
+        return view('posts/wepon')->with(['posts'=> $post,
+                                            'comments'=>$comment->where('post_id',$post)->get()
+                                        ]);
     }
     
     public function create(Gun $gun,Tag $tag)
@@ -102,4 +107,17 @@ class PostController extends Controller
         ]);
     
     }
+    
+    public function commentstore(Comment $comment,Request $request)
+    {
+        $input = $request['comment'];
+        $user = Auth::user()->id;
+        $input['user_id']= $user;
+        #dd($input);
+        $comment->fill($input)->save();
+        
+        return redirect('/posts/'.$comment->post_id);
+        
+    }
+    
 }

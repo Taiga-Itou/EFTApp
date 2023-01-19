@@ -15,13 +15,14 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::post('/comment', [PostController::class, 'commentstore']);
 Route::get('/top', [PostController::class, 'top'])->name('top');
 Route::get('/posts/create', [PostController::class, 'create'])->name('create');
 Route::get('/posts', [PostController::class, 'weponTop'])->name('weponTop');
 Route::delete('/posts/{post}', [PostController::class, 'delete']);
 Route::get('/posts/{post}', [PostController::class, 'wepon']);
 Route::post('/posts', [PostController::class, 'store']);
+
 Route::get('/posts/{post}/edit', [PostController::class, 'edit']);
 Route::put('/posts/{post}', [PostController::class, 'update']);
 Route::get('/mypage', [ProfileController::class, 'mypage'])->name('mypage');
