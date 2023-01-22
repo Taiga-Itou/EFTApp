@@ -14,7 +14,7 @@
             <img src="{{ $post->image }}" class="image">
             <p4 class='good_num'>{{ $post->good_num }}</p4>
             <p5 class='user_id'> {{ $post->user->name}}</p5>
-            <p6 class='update_at'>{{ $post->update_at }}</p6>
+            <p6 class='update_at'>{{ $post->updated_at }}</p6>
         </div>
         @endforeach
     </div>

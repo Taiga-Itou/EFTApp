@@ -9,6 +9,7 @@ use App\Models\Gun;
 use App\Models\Tag;
 use App\Models\User;
 use App\Models\Wepon;
+use App\Models\Comment;
 
 class Post extends Model
 {
@@ -41,6 +42,10 @@ class Post extends Model
         return $this->belongsTo(wepon::class);
     }
     
+    public function comment()
+    {
+        return $this->belongsTo(comment::class);
+    }
     protected $fillable =[
         'title',
         'body',

@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('comments', function (Blueprint $table) {
             $table->bigIncrements('id')->nullable(false);
             $table->foreignId('user_id')->nullable(false);
+            $table->foreignId('post_id')->nullable(false);
             $table->string('body',150)->nullable(false);
             $table->timestamp('updated_at')->useCurrent()->nullable(false);
             $table->timestamp('created_at')->useCurrent()->nullable(false);
