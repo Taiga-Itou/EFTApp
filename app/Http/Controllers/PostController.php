@@ -39,7 +39,7 @@ class PostController extends Controller
         $post_id =$post->id;
         #dd($post_id);
         return view('posts/wepon')->with(['posts'=> $post,
-                                            'comments'=>$comment->where('post_id',$post)->get()
+                                            'comments'=>$comment->where('post_id',$post_id)->get()
                                         ]);
     }
     
@@ -115,7 +115,6 @@ class PostController extends Controller
         $input['user_id']= $user;
         #dd($input);
         $comment->fill($input)->save();
-        
         return redirect('/posts/'.$comment->post_id);
         
     }

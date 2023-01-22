@@ -8,12 +8,12 @@
     <div class="tag"> {{ $posts->tag->name}} </div>
     <div class="body">{{ $posts->body }}</div>
     <div class="good_num">{{ $posts->good_num }}</div>
-    <div class="update_at">{{ $posts->update_at }}</div>
+    <div class="update_at">{{ $posts->updated_at }}</div>
     <div class="comments">
         @foreach($comments as $comment)
         <div class="user_id">{{ $comment->user_id }}</div>
         <div class="comment">{{ $comment->body }}</div>
-        <div class="update_at">{{ $commet->update_at }}</div>
+        <div class="update_at">{{ $comment->updated_at }}</div>
         @endforeach
     </div>
         <form action="/comment" method="POST" >
