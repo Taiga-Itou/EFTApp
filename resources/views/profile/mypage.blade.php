@@ -1,7 +1,7 @@
-<x-app-layout>
-    <x-slot>
-        mypage
-    </x-slot>
+@extends('layouts.common')
+@include('layouts.header')
+@include('layouts.sidebar')
+@section('content')
         <div class="myposts">
             @foreach($myposts as $mypost)
             <div class="post">
@@ -37,4 +37,4 @@
             }
         }
         </script>
-</x-app-layout>
+@endsection

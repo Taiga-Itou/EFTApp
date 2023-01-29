@@ -7,11 +7,15 @@
         </svg>
         <span class="ml-3 text-2xl">EFT WeponCustom</span>
       </a>
-      <button class="inline-flex text-white items-center bg-emerald-500 border-0 py-1 px-3 mx-2 focus:outline-none hover:bg-emerald-400 rounded text-base mt-4 md:mt-0">
+      <button>
+        <a href="/register">
           新規登録
+        </a>
       </button>
-      <button class="inline-flex text-white items-center bg-emerald-500 border-0 py-1 px-3 mx-2 focus:outline-none hover:bg-emerald-400 rounded text-base mt-4 md:mt-0">
+      <button>
+        <a href="/login">
           ログイン
+        </a>
       </button>
     </div>
 </header>

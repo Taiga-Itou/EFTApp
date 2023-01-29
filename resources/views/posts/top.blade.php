@@ -1,9 +1,7 @@
-
-        @extends('layouts.common')
-        
-        @include('layouts.header')
-        
-        @include('layouts.sidebar')
-    @section('content')
+@extends('layouts.common')
+@include('layouts.sidebar')
+@include('layouts.header')
+@section('content')
     <h1>ランキング</h1>
-    @endsection
+@endsection
+    

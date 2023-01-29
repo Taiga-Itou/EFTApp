@@ -29,17 +29,34 @@ class PostController extends Controller
                                         ]);
     }
     
-    public function weponTop(Post $post)
+    public function weponTop(Post $post,Gun $gun)
     {
-        return view('posts/weponTop')->with(['posts'=> $post ->get()]);
+        return view('posts/weponTop')->with(['posts'=> $post ->get(),
+                                            'assault_carbines'=> $gun-> Where('wepon_id','1')->get() ,
+                                            'assault_rifles'=> $gun-> Where('wepon_id','2')->get(),
+                                            'bolt_action_rifles'=> $gun-> Where('wepon_id','3')->get(),
+                                            'machineguns'=> $gun-> Where('wepon_id','4')->get(),
+                                            'marksman_rifles'=> $gun-> Where('wepon_id','5')->get(),
+                                            'pistols'=> $gun-> Where('wepon_id','6')->get(),
+                                            'sub_machineguns'=> $gun-> Where('wepon_id','7')->get(),
+                                            'shotguns'=> $gun-> Where('wepon_id','8')->get(),
+                                            ]);
     }
     
-    public function wepon(Post $post,Comment $comment)
+    public function wepon(Post $post,Comment $comment,Gun $gun)
     {
         $post_id =$post->id;
         #dd($post_id);
         return view('posts/wepon')->with(['posts'=> $post,
-                                            'comments'=>$comment->where('post_id',$post_id)->get()
+                                            'comments'=>$comment->where('post_id',$post_id)->get(),
+                                            'assault_carbines'=> $gun-> Where('wepon_id','1')->get() ,
+                                            'assault_rifles'=> $gun-> Where('wepon_id','2')->get(),
+                                            'bolt_action_rifles'=> $gun-> Where('wepon_id','3')->get(),
+                                            'machineguns'=> $gun-> Where('wepon_id','4')->get(),
+                                            'marksman_rifles'=> $gun-> Where('wepon_id','5')->get(),
+                                            'pistols'=> $gun-> Where('wepon_id','6')->get(),
+                                            'sub_machineguns'=> $gun-> Where('wepon_id','7')->get(),
+                                            'shotguns'=> $gun-> Where('wepon_id','8')->get(),
                                         ]);
     }
     
@@ -47,7 +64,15 @@ class PostController extends Controller
     {
         return view('posts/create')->with([
                                             'guns'=> $gun->get(),
-                                            'tags'=> $tag->get()
+                                            'tags'=> $tag->get(),
+                                            'assault_carbines'=> $gun-> Where('wepon_id','1')->get() ,
+                                            'assault_rifles'=> $gun-> Where('wepon_id','2')->get(),
+                                            'bolt_action_rifles'=> $gun-> Where('wepon_id','3')->get(),
+                                            'machineguns'=> $gun-> Where('wepon_id','4')->get(),
+                                            'marksman_rifles'=> $gun-> Where('wepon_id','5')->get(),
+                                            'pistols'=> $gun-> Where('wepon_id','6')->get(),
+                                            'sub_machineguns'=> $gun-> Where('wepon_id','7')->get(),
+                                            'shotguns'=> $gun-> Where('wepon_id','8')->get(),
                                             ]);
     }
     
@@ -66,7 +91,15 @@ class PostController extends Controller
         return view('posts/edit')->with([
                                         'posts'=> $post,
                                         'guns'=> $gun->get(),
-                                        'tags'=> $tag->get()
+                                        'tags'=> $tag->get(),
+                                        'assault_carbines'=> $gun-> Where('wepon_id','1')->get() ,
+                                        'assault_rifles'=> $gun-> Where('wepon_id','2')->get(),
+                                        'bolt_action_rifles'=> $gun-> Where('wepon_id','3')->get(),
+                                        'machineguns'=> $gun-> Where('wepon_id','4')->get(),
+                                        'marksman_rifles'=> $gun-> Where('wepon_id','5')->get(),
+                                        'pistols'=> $gun-> Where('wepon_id','6')->get(),
+                                        'sub_machineguns'=> $gun-> Where('wepon_id','7')->get(),
+                                        'shotguns'=> $gun-> Where('wepon_id','8')->get(),
                                         ]);
     }
     
@@ -84,7 +117,7 @@ class PostController extends Controller
     public function delete(Post $post)
     {
         $post->delete();
-        return redirect('/posts');
+        return redirect('/mypage');
     }
     
     public function category(Post $post, Gun $gun, Wepon $wepon)
@@ -103,7 +136,15 @@ class PostController extends Controller
         #dd($wepon2->where('id',$wepon_id)->get());
         return view('posts/category')->with([
             'posts'=> $post-> whereIn('gun_id',$wepon)->get(),
-            'wepons' => $wepon2->where('id',$wepon_id)->get()
+            'wepons' => $wepon2->where('id',$wepon_id)->get(),
+            'assault_carbines'=> $gun-> Where('wepon_id','1')->get() ,
+            'assault_rifles'=> $gun-> Where('wepon_id','2')->get(),
+            'bolt_action_rifles'=> $gun-> Where('wepon_id','3')->get(),
+            'machineguns'=> $gun-> Where('wepon_id','4')->get(),
+            'marksman_rifles'=> $gun-> Where('wepon_id','5')->get(),
+            'pistols'=> $gun-> Where('wepon_id','6')->get(),
+            'sub_machineguns'=> $gun-> Where('wepon_id','7')->get(),
+            'shotguns'=> $gun-> Where('wepon_id','8')->get(),
         ]);
     
     }
@@ -117,6 +158,25 @@ class PostController extends Controller
         $comment->fill($input)->save();
         return redirect('/posts/'.$comment->post_id);
         
+    }
+    
+    public function gun(Post $post,Gun $gun)
+    {
+        $gun_id = $gun->id;
+        $gun_name=$gun->name;
+        $gun_category = $post->where('gun_id',$gun_id)->get();
+        return view('posts/guncategory')->with([
+            'posts'=>$gun_category,
+            'gun_name'=>$gun_name,
+            'assault_carbines'=> $gun-> Where('wepon_id','1')->get() ,
+            'assault_rifles'=> $gun-> Where('wepon_id','2')->get(),
+            'bolt_action_rifles'=> $gun-> Where('wepon_id','3')->get(),
+            'machineguns'=> $gun-> Where('wepon_id','4')->get(),
+            'marksman_rifles'=> $gun-> Where('wepon_id','5')->get(),
+            'pistols'=> $gun-> Where('wepon_id','6')->get(),
+            'sub_machineguns'=> $gun-> Where('wepon_id','7')->get(),
+            'shotguns'=> $gun-> Where('wepon_id','8')->get(),
+            ]);
     }
     
 }

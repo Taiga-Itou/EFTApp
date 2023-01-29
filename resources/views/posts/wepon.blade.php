@@ -1,6 +1,8 @@
-<x-app-layout>
-    <x-slot>
-    </x-slot>
+@extends('layouts.common')
+@include('layouts.header')
+@include('layouts.sidebar')
+@section('content')
+<h1>投稿詳細</h1>
     <p class="user_id">{{ $posts->user->name }}</p>
     <h1 class="title">{{ $posts->title }}</h1>
     <img src="{{ $posts->image }}" class="image">
@@ -11,7 +13,7 @@
     <div class="update_at">{{ $posts->updated_at }}</div>
     <div class="comments">
         @foreach($comments as $comment)
-        <div class="user_id">{{ $comment->user_id }}</div>
+        <div class="user_id">{{ $comment->user->name }}</div>
         <div class="comment">{{ $comment->body }}</div>
         <div class="update_at">{{ $comment->updated_at }}</div>
         @endforeach
@@ -29,6 +31,6 @@
     <div class="footer">
         <a href="/posts">戻る</a>
     </div>
-</x-app-layout>
+@endsection
     
         

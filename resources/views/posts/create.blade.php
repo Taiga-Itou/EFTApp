@@ -1,7 +1,7 @@
-<x-app-layout>
-    <x-slot name="header">
-        Create
-    </x-slot>
+@extends('layouts.common')
+@include('layouts.header')
+@include('layouts.sidebar')
+@section('content')
     <h1> Create </h1>
     <form action="/posts" method="POST" enctype="multipart/form-data">
         @csrf
@@ -41,4 +41,4 @@
         </div>
             <input type="submit" value="作成"/>
     </form>
-</x-app-layout>        
+@endsection       

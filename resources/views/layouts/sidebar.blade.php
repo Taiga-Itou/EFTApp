@@ -1,98 +1,118 @@
 @section('sidebar')
 <style>
-.wepons{
-    font:30px;
-}
 .wepon{
-    font-size:10px;
+    font-size:13px;
+}
+.create{
+    font-size:13px;
 }
 
 </style>
-<div>
-<h1>Wepons</h1>
-<ul class='wepons' onclick="func()">
-    <ul>
+<div class="wepon">
+ <h1>Wepons</h1>
         @foreach($assault_carbines as $assault_carbine)
         @if($loop->first)
-        <li class="wepon">
+        <details>
+            <summary>
             <a href="/wepons/{{ $assault_carbine->wepon_id }}">{{ $assault_carbine->wepon->name}}</a>
-            <ul>
+            </summary>
             @endif
-                <li class="wepon">{{$assault_carbine->name}}</li>
+                <li>
+                    <a href="/wepon/{{ $assault_carbine->id }}">{{$assault_carbine->name}}</a>
+                </li>
             @endforeach
-                </ul>
-            </li>
+        </details>
             @foreach($assault_rifles as $assault_rifle)
             @if($loop->first)
-            <li>
-                <a class="wepon" href="/wepons/{{ $assault_rifle->wepon_id }}">{{ $assault_rifle->wepon->name}}</a>
-            <ul>
+        <details>
+            <summary>
+                <a  href="/wepons/{{ $assault_rifle->wepon_id }}">{{ $assault_rifle->wepon->name}}</a>
+            </summary>
             @endif
-                <li class="wepon">{{$assault_rifle->name}}</li>
+                <li>
+                    <a  href="/wepon/{{ $assault_rifle->id }}">{{$assault_rifle->name}}</a>
+                </li>
             @endforeach
-                </ul>
-            </li>
+        </details>
             @foreach($bolt_action_rifles as $bolt_action_rifle)
             @if($loop->first)
-            <li class="wepon">
+        <details>
+            <summary>
                 <a href="/wepons/{{ $bolt_action_rifle->wepon_id }}">{{ $bolt_action_rifle->wepon->name}}</a>
-                <ul>
-                @endif
-                    <li class="wepon">{{$bolt_action_rifle->name}}</li>
+            </summary>
+            @endif
+                <li>
+                    <a href="/wepon/{{ $bolt_action_rifle->id }}">{{$bolt_action_rifle->name}}</a>
+                </li>
             @endforeach
-                </ul>
-            </li>
+        </details>
             @foreach($machineguns as $machinegun)
             @if($loop->first)
-            <li>
-                <a class="wepon" href="/wepons/{{ $machinegun->wepon_id }}">{{ $machinegun->wepon->name}}</a>
-                <ul>
+        <details>
+            <summary>
+                <a href="/wepons/{{ $machinegun->wepon_id }}">{{ $machinegun->wepon->name}}</a>
+            </summary>
             @endif
-                    <li class="wepon">{{$machinegun->name}}</li>
+                <li>
+                    <a href="/wepon/{{ $machinegun->id }}">{{$machinegun->name}}</a>
+                </li>
             @endforeach
-                </ul>
-            </li>
+        </details>
             @foreach($marksman_rifles as $marksman_rifle)
             @if($loop->first)
-            <li>
-                <a class="wepon" href="/wepons/{{ $marksman_rifle->wepon_id }}">{{ $marksman_rifle->wepon->name}}</a>
-                <ul>
+        <details>
+            <summary>
+                <a href="/wepons/{{ $marksman_rifle->id }}">{{ $marksman_rifle->wepon->name}}</a>
+            </summary>
             @endif
-                    <li class="wepon">{{$marksman_rifle->name}}</li>
+                <li>
+                    <a href="/wepon/{{ $marksman_rifle->id }}">{{$marksman_rifle->name}}</a>
+                </li>
             @endforeach
-                </ul>
-            </li>
+        </details>
             @foreach($pistols as $pistol)
             @if($loop->first)
-            <li>
-                <a class="wepon" href="/wepons/{{ $pistol->wepon_id }}">{{ $pistol->wepon->name}}</a>
-                <ul>
+        <details>
+            <summary>
+                <a href="/wepons/{{ $pistol->wepon_id }}">{{ $pistol->wepon->name}}</a>
+            </summary>
             @endif
-                    <li class="wepon">{{$pistol->name}}</li>
+                <li>
+                    <a href="/wepon/{{ $pistol->id }}">{{$pistol->name}}</a>
+                </li>
             @endforeach
-                </ul>
-            </li>
+        </details>
             @foreach($shotguns as $shotgun)
             @if($loop->first)
-            <li>
-                <a class="wepon" href="/wepons/{{ $shotgun->wepon_id }}">{{ $shotgun->wepon->name}}</a>
-                <ul>
+        <details>
+            <summary>
+                <a href="/wepons/{{ $shotgun->wepon_id }}">{{ $shotgun->wepon->name}}</a>
+            </summary>
             @endif
-                    <li class="wepon">{{$shotgun->name}}</li>
+                <li>
+                    <a href="/wepon/{{ $shotgun->id }}">{{$shotgun->name}}</a>
+                </li>
             @endforeach
-                </ul>
-            </li>
+        </details>
             @foreach($sub_machineguns as $sub_machinegun)
             @if($loop->first)
-            <li>
-                <a class="wepon" href="/wepons/{{ $sub_machinegun->wepon_id }}">{{ $sub_machinegun->wepon->name}}</a>
-                <ul>
+        <details>
+            <summary>
+                <a href="/wepons/{{ $sub_machinegun->wepon_id }}">{{ $sub_machinegun->wepon->name}}</a>
+            </summary>
             @endif
-                    <li class="wepon">{{$sub_machinegun->name}}</li>
+                <li>
+                    <a href="/wepon/{{ $sub_machinegun->id }}">{{$sub_machinegun->name}}</a>
+                </li>
             @endforeach
-                </ul>
-            </li>
-        </ul>
-        </ul>
+        </details>
+        
 </div>
+<div class="create">
+    <a href="/posts/create">投稿作成/Create</a>
+</div>
+<div>
+    <a href="/mypage">Mypage</a>
+</div>
+
 @endsection
