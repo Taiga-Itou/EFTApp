@@ -9,7 +9,19 @@
     <div class="wepon">{{ $posts->gun->wepon->name }}::{{ $posts->gun->name }}</div>
     <div class="tag"> {{ $posts->tag->name}} </div>
     <div class="body">{{ $posts->body }}</div>
-    <div class="good_num">{{ $posts->good_num }}</div>
+    <div class="good_num">
+        <form action="/good_num/{{$posts->id}}" method="POST">
+        @csrf
+        @method('PUT')
+        <input type="hidden" name="post[title]" value="{{ $posts->title }}">
+        <input type="hidden" name="post[body]" value="{{ $posts->body }}">
+        <input type="hidden" name="post[gun_id]" value="{{ $posts->gun_id }}">
+        <input type="hidden" name="post[image]" value="{{ $posts->image }}">
+        <input type="hidden" name="post[tag_id]" value="{{ $posts->tag_id }}">
+        <input type="submit" value="♡"/>
+        {{ $posts->good_num }}
+        </form>
+    </div>
     <div class="update_at">{{ $posts->updated_at }}</div>
     <div class="comments">
         @foreach($comments as $comment)

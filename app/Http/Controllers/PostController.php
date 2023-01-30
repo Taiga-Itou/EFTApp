@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Arr;
 use App\Models\Wepon;
 use App\Models\Gun;
 use App\Models\Post;
@@ -106,11 +107,13 @@ class PostController extends Controller
     public function update(PostRequest $request, Post $post)
     {
         $input_post = $request['post'];
+        #dd($input_post);
         $image = $post->image;
         $img = Cloudinary::upload($request->file('image')->getRealPath())->getSecurePath();
         $input_post['image']=$img;
+        #dd($input_post);
         $post->fill($input_post)->save();
-        
+        #dd($post);
         return redirect('/posts/'. $post->id);
     }
     
@@ -177,6 +180,19 @@ class PostController extends Controller
             'sub_machineguns'=> $gun-> Where('wepon_id','7')->get(),
             'shotguns'=> $gun-> Where('wepon_id','8')->get(),
             ]);
+    }
+    
+    public function good_num(Request $request,Post $post)
+    {
+        $input_post = $request['post'];
+        #dd($input_post);
+        $good_sum = $post->good_num+1;
+        #dd($good_sum);
+        $input_post['good_num'] =$good_sum;
+        #dd($input_post);
+        $post->fill($input_post)->save();
+        #dd($post);
+        return redirect('/posts/'.$post->id);
     }
     
 }

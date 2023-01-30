@@ -62,7 +62,7 @@
             @if($loop->first)
         <details>
             <summary>
-                <a href="/wepons/{{ $marksman_rifle->id }}">{{ $marksman_rifle->wepon->name}}</a>
+                <a href="/wepons/{{ $marksman_rifle->wepon_id }}">{{ $marksman_rifle->wepon->name}}</a>
             </summary>
             @endif
                 <li>
