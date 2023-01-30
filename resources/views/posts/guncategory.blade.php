@@ -2,9 +2,7 @@
 @include('layouts.header')
 @include('layouts.sidebar')
 @section('content')
-    @foreach($wepons as $wepon)
-    <h1 class="category">{{ $wepon->name }}</h1>
-    @endforeach
+    <h1 class="category">{{ $gun_name }}</h1>
     <div class='posts'>
         @foreach($posts as $post)
         <div class='post'>

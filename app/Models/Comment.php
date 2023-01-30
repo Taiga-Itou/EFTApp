@@ -15,6 +15,11 @@ class Comment extends Model
         return $this->hasMany(post::class);
     }
     
+    public function user()
+    {
+        return $this->belongsTo(user::class);
+    }
+    
     protected $fillable =[
         'post_id',
         'body',

@@ -1,6 +1,7 @@
-<x-app-layout>
-    <x-slot name="header">
-    </x-slot>
+@extends('layouts.common')
+@include('layouts.header')
+@include('layouts.sidebar')
+@section('content')
     <h1> Edit </h1>
     <form action="/posts/{{ $posts->id }}" method="POST" enctype="multipart/form-data">
         @csrf
@@ -43,4 +44,4 @@
         </div>
             <input type="submit" value="更新"/>
     </form>
-</x-app-layout>
+@endsection

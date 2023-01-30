@@ -27,11 +27,12 @@ Route::get('/posts/{post}/edit', [PostController::class, 'edit']);
 Route::put('/posts/{post}', [PostController::class, 'update']);
 Route::get('/mypage', [ProfileController::class, 'mypage'])->name('mypage');
 Route::get('/wepons/{wepon}', [PostController::class, 'category']);
+Route::get('/wepon/{gun}',[PostController::class, 'gun']);
 
 
-Route::get('/dashboard', function () {
+/*Route::get('/dashboard', function () {
     return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');*/
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

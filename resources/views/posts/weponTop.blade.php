@@ -1,7 +1,7 @@
-<x-app-layout>
-    <x-slot name="header">
-        WeponTop
-    </x-slot>
+@extends('layouts.common')
+@include('layouts.header')
+@include('layouts.sidebar')
+@section('content')
 <h1>Wepon</h1>
     <div class='posts'>
         @foreach($posts as $post)
@@ -19,5 +19,4 @@
     <div class='paginate'>
         
     </div>
-
-</x-app-layout>
+@endsection
