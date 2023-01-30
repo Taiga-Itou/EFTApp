@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::post('/comment', [PostController::class, 'commentstore']);
+Route::put('/good_num/{post}',[PostController::class, 'good_num']);
 Route::get('/top', [PostController::class, 'top'])->name('top');
 Route::get('/posts/create', [PostController::class, 'create'])->name('create');
 Route::get('/posts', [PostController::class, 'weponTop'])->name('weponTop');
@@ -28,6 +29,7 @@ Route::put('/posts/{post}', [PostController::class, 'update']);
 Route::get('/mypage', [ProfileController::class, 'mypage'])->name('mypage');
 Route::get('/wepons/{wepon}', [PostController::class, 'category']);
 Route::get('/wepon/{gun}',[PostController::class, 'gun']);
+
 
 
 /*Route::get('/dashboard', function () {

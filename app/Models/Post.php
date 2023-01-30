@@ -53,5 +53,6 @@ class Post extends Model
         'gun_id',
         'image',
         'tag_id',
+        'good_num',
     ];
 }
