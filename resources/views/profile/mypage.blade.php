@@ -2,17 +2,23 @@
 @include('layouts.header')
 @include('layouts.sidebar')
 @section('content')
+<style>
+.image{
+    width:500px;
+}
+</style>
+ <h1>MY PAGE</h1>
         <div class="myposts">
             @foreach($myposts as $mypost)
             <div class="post">
                 <a href="/posts/{{ $mypost->id }}" class='title'>{{ $mypost->title }}</a>
-                <img src="{{ $mypost->image }}" class="image">
                 <div class="body">{{ $mypost->body }}</div>
                 <div class="wepon">{{ $mypost->gun->wepon->name }}::{{ $mypost->gun->name }}</div>
                 <div class="tag"> {{ $mypost->tag->name}} </div>
-                <div class="body">{{ $mypost->body }}</div>
                 <div class="good_num">{{ $mypost->good_num }}</div>
                 <div class="update_at">{{ $mypost->update_at }}</div>
+                <img src="{{ $mypost->image }}" class="image">
+                <div class="body">{{ $mypost->body }}</div>
                 <div class="edit">
                     <a href="/posts/{{ $mypost->id }}/edit">Edit</a>
                 </div>

@@ -2,6 +2,11 @@
 @include('layouts.header')
 @include('layouts.sidebar')
 @section('content')
+<style>
+.image{
+    width:1000px;
+}
+</style>
 <h1>投稿詳細</h1>
     <p class="user_id">{{ $posts->user->name }}</p>
     <h1 class="title">{{ $posts->title }}</h1>
