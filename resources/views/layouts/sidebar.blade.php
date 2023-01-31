@@ -9,7 +9,7 @@
 
 </style>
 <div class="wepon">
- <h1>Wepons</h1>
+        <a href="/posts">Wepons</a>
         @foreach($assault_carbines as $assault_carbine)
         @if($loop->first)
         <details>

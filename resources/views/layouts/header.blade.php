@@ -12,11 +12,19 @@
           新規登録
         </a>
       </button>
+      @guest
       <button>
         <a href="/login">
           ログイン
         </a>
       </button>
+      @endguest
+      @auth
+      <form action="/logout" method="POST">
+        @csrf
+        <input type="submit" value="ログアウト">
+      </form>
+      @endauth
     </div>
 </header>
 @endsection
