@@ -6,6 +6,12 @@
 .image{
     width:500px;
 }
+.wepons{
+    font-size:20px;
+}
+.post{
+    border:solid 3px;
+}
 </style>
     @foreach($wepons as $wepon)
     <h1 class="category">{{ $wepon->name }}</h1>

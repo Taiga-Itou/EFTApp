@@ -6,14 +6,21 @@
 .image{
     width:1000px;
 }
+.wepons{
+    font-size:15px;
+}
+.bodies{
+    border:solid 1px;
+    width:1000px;
+}
 </style>
 <h1>投稿詳細</h1>
     <p class="user_id">{{ $posts->user->name }}</p>
     <h1 class="title">{{ $posts->title }}</h1>
     <img src="{{ $posts->image }}" class="image">
-    <div class="wepon">{{ $posts->gun->wepon->name }}::{{ $posts->gun->name }}</div>
+    <div class="wepons">{{ $posts->gun->wepon->name }}::{{ $posts->gun->name }}</div>
     <div class="tag"> {{ $posts->tag->name}} </div>
-    <div class="body">{{ $posts->body }}</div>
+    <div class="bodies">{!!nl2br(htmlspecialchars( $posts->body))!!}</div>
     <div class="good_num">
         <form action="/good_num/{{$posts->id}}" method="POST">
         @csrf

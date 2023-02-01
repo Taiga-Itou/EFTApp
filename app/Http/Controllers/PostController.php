@@ -16,9 +16,10 @@ use Cloudinary;
 
 class PostController extends Controller
 {
-    public function top(Gun $gun)
+    public function top(Gun $gun,Post $post)
     {
         return view('posts/top')->with([
+                                        'posts'=>$post->orderBy('good_num','DESC')->take(10)->get(),
                                         'assault_carbines'=> $gun-> Where('wepon_id','1')->get() ,
                                         'assault_rifles'=> $gun-> Where('wepon_id','2')->get(),
                                         'bolt_action_rifles'=> $gun-> Where('wepon_id','3')->get(),

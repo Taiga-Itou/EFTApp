@@ -2,6 +2,9 @@
 @include('layouts.header')
 @include('layouts.sidebar')
 @section('content')
+<style>
+
+</style>
     <h1> Edit </h1>
     <form action="/posts/{{ $posts->id }}" method="POST" enctype="multipart/form-data">
         @csrf
@@ -13,7 +16,7 @@
         </div>
         <div class="body">
             <h2>Body</h2>
-            <textarea name="post[body]" placeholder="武器構成,想定値段,その他" >{{ $posts->body }}</textarea>
+            <textarea name="post[body]" placeholder="武器構成,想定値段,その他"　cols="60" rows="15">{{ $posts->body }}</textarea>
             <p class="errors">{{ $errors->first('post.body') }}</p>
         </div>
         <div class="wepon">

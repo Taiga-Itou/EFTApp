@@ -8,7 +8,11 @@
 }
 
 </style>
+<div>
+    <a href="/top">TOP</top>
+</div>
 <div class="wepon">
+    
         <a href="/posts">Wepons</a>
         @foreach($assault_carbines as $assault_carbine)
         @if($loop->first)
@@ -114,5 +118,4 @@
 <div>
     <a href="/mypage">Mypage</a>
 </div>
-
 @endsection

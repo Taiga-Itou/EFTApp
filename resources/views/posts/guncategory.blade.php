@@ -6,6 +6,12 @@
 .image{
     width:500px;
 }
+.wepons{
+    font-size:20px;
+}
+.post{
+    border:solid 3px;
+}
 </style>
     <h1 class="category">{{ $gun_name }}</h1>
     <div class='posts'>
