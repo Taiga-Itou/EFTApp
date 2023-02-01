@@ -8,22 +8,24 @@
 }
 .sidebar{
     width: 200px;
+    background-color:#f0f8ff;
 }
 .content{
     width: calc(100%-200px);
 }
+
 </style>
 <body>
-    <div>
+    <div class='header'>
         @yield('header')
     </div>
     <div class="flex">
         <div class="sidebar">
             @yield('sidebar')
         </div>
-        <main class"content">
+        <div class"content">
             @yield('content')
-        </main>
+        </div>
     </div>
 </body>
 </html>
