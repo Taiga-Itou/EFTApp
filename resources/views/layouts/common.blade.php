@@ -1,29 +1,24 @@
 <!DOCTYPE html>
 <html lang="ja">
     <head>
+        <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap">
+
+        <!-- Scripts -->
+        @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
 <style>
-.flex{
-    display: flex;
-}
-.sidebar{
-    width: 200px;
-    background-color:#f0f8ff;
-}
-.content{
-    width: calc(100%-200px);
-}
+
 
 </style>
-<body>
+<body class="bg-teal-100">
     <div class='header'>
         @yield('header')
     </div>
-    <div class="flex">
-        <div class="sidebar">
+    <div class="flex flex-row gap-x-4">
+        <div class="w-1/6 bg-amber-200">
             @yield('sidebar')
         </div>
-        <div class"content">
+        <div class="w-3/5 ">
             @yield('content')
         </div>
     </div>
