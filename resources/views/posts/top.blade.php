@@ -13,7 +13,7 @@
     border:solid 3px;
 }
 </style>
-    <h1>ランキング</h1>
+    <h1>ランキング/Rank</h1>
     <div class='posts'>
         @foreach($posts as $post)
         <div class='post'>
