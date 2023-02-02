@@ -27,6 +27,7 @@ Route::group(['middleware'=>['auth']], function(){
     Route::delete('/posts/{post}', [PostController::class, 'delete']);
     
 });
+Route::get('/random', [PostController::class, 'random']);
 Route::put('/good_num/{post}',[PostController::class, 'good_num']);
 Route::get('/top', [PostController::class, 'top']);
 Route::get('/posts', [PostController::class, 'weponTop']);
