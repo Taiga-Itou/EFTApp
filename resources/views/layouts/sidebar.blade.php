@@ -1,22 +1,18 @@
 @section('sidebar')
 <style>
-.wepon{
-    font-size:13px;
-}
-.create{
-    font-size:13px;
-}
 
 </style>
-<div>
-    <a href="/top">TOP</top>
+
+<div class="text-center border-t-2 border-solid border-black">
+    <a  href="/top">TOP</top>
 </div>
-<div class="wepon">
-    
-        <a href="/posts">Wepons</a>
+
+<div class="text-sm border-t-2 border-solid border-black indent-0.5">
+
+        <a class="border-t-2 border-solid border-black" href="/posts">Wepons</a>
         @foreach($assault_carbines as $assault_carbine)
         @if($loop->first)
-        <details>
+        <details class="border-t-2 border-solid border-black">
             <summary>
             <a href="/wepons/{{ $assault_carbine->wepon_id }}">{{ $assault_carbine->wepon->name}}</a>
             </summary>
@@ -28,7 +24,7 @@
         </details>
             @foreach($assault_rifles as $assault_rifle)
             @if($loop->first)
-        <details>
+        <details class="border-t-2 border-solid border-black">
             <summary>
                 <a  href="/wepons/{{ $assault_rifle->wepon_id }}">{{ $assault_rifle->wepon->name}}</a>
             </summary>
@@ -40,7 +36,7 @@
         </details>
             @foreach($bolt_action_rifles as $bolt_action_rifle)
             @if($loop->first)
-        <details>
+        <details class="border-t-2 border-solid border-black">
             <summary>
                 <a href="/wepons/{{ $bolt_action_rifle->wepon_id }}">{{ $bolt_action_rifle->wepon->name}}</a>
             </summary>
@@ -52,7 +48,7 @@
         </details>
             @foreach($machineguns as $machinegun)
             @if($loop->first)
-        <details>
+        <details class="border-t-2 border-solid border-black">
             <summary>
                 <a href="/wepons/{{ $machinegun->wepon_id }}">{{ $machinegun->wepon->name}}</a>
             </summary>
@@ -64,7 +60,7 @@
         </details>
             @foreach($marksman_rifles as $marksman_rifle)
             @if($loop->first)
-        <details>
+        <details class="border-t-2 border-solid border-black">
             <summary>
                 <a href="/wepons/{{ $marksman_rifle->wepon_id }}">{{ $marksman_rifle->wepon->name}}</a>
             </summary>
@@ -76,7 +72,7 @@
         </details>
             @foreach($pistols as $pistol)
             @if($loop->first)
-        <details>
+        <details class="border-t-2 border-solid border-black">
             <summary>
                 <a href="/wepons/{{ $pistol->wepon_id }}">{{ $pistol->wepon->name}}</a>
             </summary>
@@ -88,7 +84,7 @@
         </details>
             @foreach($shotguns as $shotgun)
             @if($loop->first)
-        <details>
+        <details class="border-t-2 border-solid border-black">
             <summary>
                 <a href="/wepons/{{ $shotgun->wepon_id }}">{{ $shotgun->wepon->name}}</a>
             </summary>
@@ -100,7 +96,7 @@
         </details>
             @foreach($sub_machineguns as $sub_machinegun)
             @if($loop->first)
-        <details>
+        <details class="border-t-2 border-solid border-black">
             <summary>
                 <a href="/wepons/{{ $sub_machinegun->wepon_id }}">{{ $sub_machinegun->wepon->name}}</a>
             </summary>
@@ -112,10 +108,10 @@
         </details>
         
 </div>
-<div class="create">
+<div class="text-center border-t-2 border-solid border-black">
     <a href="/posts/create">投稿作成/Create</a>
 </div>
-<div>
-    <a href="/mypage">Mypage</a>
+<div class="text-center border-y-2 border-solid border-black">
+    <a  href="/mypage">Mypage</a>
 </div>
 @endsection
