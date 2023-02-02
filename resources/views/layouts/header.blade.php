@@ -13,18 +13,18 @@
         </svg>
         <span class="ml-3 text-2xl">EFT WeponCustom</span>
       </a>
-        <button class="border-2 border-black rounded-full bg-green-400 w-24" onclick="location.href='/register'" >
-          新規登録
+        <button class="border-2 border-black rounded-full bg-green-400 w-40" onclick="location.href='/register'" >
+          新規登録/Register
         </button>
       @guest
-        <button class="border-2 border-black rounded-full bg-green-400 w-24" onclick="location.href='/login'"　>
-          ログイン
+        <button class="border-2 border-black rounded-full bg-green-400 w-40" onclick="location.href='/login'"　>
+          ログイン/Login
         </button>
       @endguest
       @auth
       <form action="/logout" method="POST">
         @csrf
-        <input class="border-2 border-black rounded-full bg-green-400 w-24" type="submit" value="ログアウト">
+        <input class="border-2 border-black rounded-full bg-green-400 w-40" type="submit" value="ログアウト/Logout">
       </form>
       @endauth
     </div>
