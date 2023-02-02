@@ -18,7 +18,7 @@
         <div class="w-1/6 bg-amber-200">
             @yield('sidebar')
         </div>
-        <div class="w-3/5 ">
+        <div class="w-5/6 ">
             @yield('content')
         </div>
     </div>
