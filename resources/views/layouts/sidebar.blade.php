@@ -109,6 +109,9 @@
         
 </div>
 <div class="text-center border-t-2 border-solid border-black">
+    <a href="/random">CustomRandom</a>
+</div>
+<div class="text-center border-t-2 border-solid border-black">
     <a href="/posts/create">投稿作成/Create</a>
 </div>
 <div class="text-center border-y-2 border-solid border-black">
