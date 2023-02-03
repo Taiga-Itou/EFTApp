@@ -11,16 +11,16 @@
 
 </style>
 <body class="bg-teal-100">
-    <div class='header'>
-        @yield('header')
-    </div>
-    <div class="flex flex-row gap-x-4">
-        <div class="w-1/6 bg-amber-200">
-            @yield('sidebar')
+        <div class='header'>
+            @yield('header')
         </div>
-        <div class="w-3/5 ">
-            @yield('content')
+        <div class="flex flex-row gap-x-4">
+            <div class=" w-1/6 bg-amber-200 h-screen">
+                @yield('sidebar')
+            </div>
+            <div class="w-5/6 ">
+                @yield('content')
+            </div>
         </div>
-    </div>
 </body>
 </html>
