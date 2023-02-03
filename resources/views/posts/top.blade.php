@@ -2,14 +2,14 @@
 @include('layouts.sidebar')
 @include('layouts.header')
 @section('content')
-
-    <h1>ランキング/Rank</h1>
+<div class="border-l-2 border-black">
+    <div class="text-lg">ランキング/Rank</div>
     <div class='posts'>
         @foreach($posts as $post)
         <div class='mt-0.5 border-y-2 border-black'>
             <div>
                 {{ $loop->iteration }}
-                <a href="/posts/{{ $post->id }}" class='title'>{{ $post->title }}</a>
+                <a href="/posts/{{ $post->id }}" class='underline'>{{ $post->title }}</a>
             </div>
             <div>
                 <p1 class='text-sm'>{{ $post->gun->wepon->name }}::{{ $post->gun->name }}</p1>
@@ -25,5 +25,6 @@
         </div>
         @endforeach
     </div>
+</div>
 @endsection
     

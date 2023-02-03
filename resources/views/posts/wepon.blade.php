@@ -2,25 +2,17 @@
 @include('layouts.header')
 @include('layouts.sidebar')
 @section('content')
-<style>
-.image{
-    width:1000px;
-}
-.wepons{
-    font-size:15px;
-}
-.bodies{
-    border:solid 1px;
-    width:1000px;
-}
-</style>
-<h1>投稿詳細</h1>
-    <p class="user_id">User/{{ $posts->user->name }}</p>
-    <h1 class="title">{{ $posts->title }}</h1>
-    <img src="{{ $posts->image }}" class="image">
-    <div class="wepons">{{ $posts->gun->wepon->name }}::{{ $posts->gun->name }}</div>
+<div class="border-l-2 border-black">
+<div class="text-lg">投稿詳細/Post Detail</div>
+    <p class="border-t-2 border-black">User/{{ $posts->user->name }}</p>
+    <h1 class="text-lg">{{ $posts->title }}</h1>
+    <img src="{{ $posts->image }}" class="w-11/12">
+    <div class="text-sm">{{ $posts->gun->wepon->name }}::{{ $posts->gun->name }}</div>
     <div class="tag"> {{ $posts->tag->name}} </div>
-    <div class="bodies">{!!nl2br(htmlspecialchars( $posts->body))!!}</div>
+    <div class="border-y-2 border-black">
+        <div class="w-32 text-center text-xs border-b border-r border-black rounded-lg">詳細/Detail</div>
+        <div>{!!nl2br(htmlspecialchars( $posts->body))!!}</div>
+    </div>
     <div class="good_num">
         <form action="/good_num/{{$posts->id}}" method="POST">
         @csrf
@@ -58,6 +50,7 @@
         </form>
     <div class="footer">
         <a href="/posts">戻る</a>
+    </div>
     </div>
 @endsection
     

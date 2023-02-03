@@ -2,7 +2,7 @@
 @include('layouts.header')
 @include('layouts.sidebar')
 @section('content')
-
+<div class="border-l-2 border-black">
     @foreach($wepons as $wepon)
     <h1 class="text-lg">{{ $wepon->name }}</h1>
     @endforeach
@@ -29,4 +29,5 @@
     <div class='paginate'>
         
     </div>
+</div>
 @endsection

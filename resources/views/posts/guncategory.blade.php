@@ -2,13 +2,13 @@
 @include('layouts.header')
 @include('layouts.sidebar')
 @section('content')
-
-    <h1 class="category">{{ $gun_name }}</h1>
+<div class="border-l-2 border-black">
+    <h1 class="text-lg">{{ $gun_name }}</h1>
     <div class='posts'>
         @foreach($posts as $post)
         <div class='mt-0.5 border-y-2 border-black'>
             <div>
-                <a href="/posts/{{ $post->id }}" class='title'>{{ $post->title }}</a>
+                <a href="/posts/{{ $post->id }}" class='underline'>{{ $post->title }}</a>
             </div>
             <div>
                 <p1 class='text-sm'>{{ $post->gun->wepon->name }}::{{ $post->gun->name }}</p1>
@@ -27,4 +27,5 @@
     <div class='paginate'>
         
     </div>
+</div>
 @endsection
