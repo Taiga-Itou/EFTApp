@@ -4,7 +4,9 @@
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
+
 </head>
+
 <header class="text-gray-600 body-font bg-red-300">
     <div class="mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
       <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
@@ -16,6 +18,7 @@
         <button class="border-2 border-black rounded-full bg-green-400 w-40" onclick="location.href='/register'" >
           新規登録/Register
         </button>
+        
       @guest
         <button class="border-2 border-black rounded-full bg-green-400 w-40" onclick="location.href='/login'"　>
           ログイン/Login
@@ -28,5 +31,6 @@
       </form>
       @endauth
     </div>
+    
 </header>
 @endsection

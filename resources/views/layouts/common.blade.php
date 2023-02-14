@@ -5,11 +5,8 @@
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
+        
     </head>
-<style>
-
-
-</style>
 <body class="bg-teal-100">
         <div class='header'>
             @yield('header')
@@ -22,5 +19,8 @@
                 @yield('content')
             </div>
         </div>
+        <script>
+     
+        </script>
 </body>
 </html>
