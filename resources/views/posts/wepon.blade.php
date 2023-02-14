@@ -38,6 +38,7 @@
         </div>
         @endforeach
     </div>
+    @auth
         <form action="/comment" method="POST" >
             @csrf
             <input type="hidden" name="comment[post_id]" value="{{ $posts->id }}">
@@ -46,8 +47,12 @@
                 <textarea name="comment[body]" placeholder="コメント" cols="80" rows="5"></textarea>
                 <p class="errors">{{ $errors->first('comments.body') }}</p>
             </div>
-            <input type="submit" value="作成"/>
+            <input class="border-2 border-black rounded-full bg-red-600 w-32" type="submit" value="作成"/>
         </form>
+    @endauth
+    @guest
+    <h>ログインするとコメントできます/Login to comment</h>
+    @endguest
     <div class="footer">
         <a href="/posts">戻る</a>
     </div>

@@ -39,6 +39,6 @@
             </select>
             <p class="errors">{{ $errors->first('post.tag_id') }}</p>
         </div>
-            <input type="submit" value="作成"/>
+            <input class="border-2 border-black rounded-full bg-red-600 w-32" type="submit" value="作成/CREATE"/>
     </form>
 @endsection       
