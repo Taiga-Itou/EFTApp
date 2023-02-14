@@ -4,7 +4,7 @@
 @section('content')
 
 <div class="border-l-2 border-black">
- <div class="text-lg">MY PAGE</div>
+ <div class="text-lg">MY PAGE /UserName( {{Auth::user()->name}} )</div>
         <div class="myposts">
             @foreach($myposts as $mypost)
             <div class='mt-0.5 border-y-2 border-black'>
@@ -27,7 +27,7 @@
                     </button>
                 </div>
                 <div class="delete">
-                    <form action="/posts/{{ $mypost->id }}" id="form_{{$mypost->id }}" method="POST">
+                    <form action="/posts/{{ $mypost->id }}" id="form_{{ $mypost->id }}" method="POST">
                         @csrf
                         @method('DELETE')
                         <button class="border-2 border-black rounded-full bg-red-600 w-32" type="button" onclick="deletePost({{ $mypost->id }})">削除/Delete</button>
