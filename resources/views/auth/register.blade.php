@@ -1,5 +1,5 @@
 <x-guest-layout>
-    <form method="POST" action="{{ route('register') }}">
+    <form method="POST" action="/register">
         @csrf
 
         <!-- Name -->
@@ -49,4 +49,9 @@
             </x-primary-button>
         </div>
     </form>
+    <div>
+        <a href="{{ url('auth/redirect') }}">
+            <img src="https://developers.google.com/identity/images/btn_google_signin_dark_normal_web.png">
+        </a>
+    </div>
 </x-guest-layout>

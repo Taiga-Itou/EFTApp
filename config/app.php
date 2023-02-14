@@ -186,6 +186,9 @@ return [
          * Package Service Providers...
          */
          CloudinaryLabs\CloudinaryLaravel\CloudinaryServiceProvider::class,
+         Laravel\Socialite\SocialiteServiceProvider::class,
+    
+
 
         /*
          * Application Service Providers...
@@ -211,6 +214,7 @@ return [
 
     'aliases' => Facade::defaultAliases()->merge([
         // 'ExampleClass' => App\Example\ExampleClass::class,
+        'Socialite' => Laravel\Socialite\Facades\Socialite::class,
     ])->toArray(),
 
 ];
